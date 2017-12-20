@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
+import { QuoteService } from '../services/quote.service';
+import { QuoteBoxComponent } from '../quote-box/quote-box.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuoteBoxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
